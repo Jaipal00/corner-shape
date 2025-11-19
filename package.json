@@ -1,5 +1,5 @@
 {
-  "name": "tailwindcss-corner-shape",
+  "name": "@toolwind/corner-shape",
   "version": "0.0.0",
   "description": "Toolwind Corner Shape provides simple utilities for applying corner shapes to elements in Tailwind CSS.",
   "type": "module",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brandonmcconnell/tailwindcss-corner-shape.git"
+    "url": "git+https://github.com/toolwind/corner-shape.git"
   },
   "keywords": [
     "css",
@@ -41,9 +41,9 @@
   "author": "Brandon McConnell",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brandonmcconnell/tailwindcss-corner-shape/issues"
+    "url": "https://github.com/toolwind/corner-shape/issues"
   },
-  "homepage": "https://github.com/brandonmcconnell/tailwindcss-corner-shape#readme",
+  "homepage": "https://github.com/toolwind/corner-shape#readme",
   "dependencies": {
     "@types/node": "^20.4.1"
   },
