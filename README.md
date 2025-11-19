@@ -106,7 +106,7 @@ Because this property is not yet supported in all browsers, consider it forward-
 For example:
 
 ```html
-<div class="rounded-xl corner-squircle">…</div>
+<div class="corner-squircle">…</div>
 ```
 ```css
 .corner-squircle {
