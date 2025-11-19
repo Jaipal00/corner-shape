@@ -1,7 +1,9 @@
 <h1 align="center">
   <a href="https://tailwindcss.com" target="_blank">
     <picture>
-      <img alt="Toolwind Corner Shape" src="https://raw.githubusercontent.com/toolwind/corner-shape/HEAD/.github/logo.png" width="350" height="auto" style="max-width: 100%;">
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/toolwind/corner-shape/HEAD/.github/logo-dark.png">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/toolwind/corner-shape/HEAD/.github/logo-light.png">
+      <img alt="Toolwind Corner Shape" src="https://raw.githubusercontent.com/toolwind/corner-shape/HEAD/.github/logo-light.png" width="350" height="auto" style="max-width: 100%;">
     </picture>
   </a>
 </h1>
