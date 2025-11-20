@@ -1,5 +1,5 @@
 import plugin from 'tailwindcss/plugin.js';
-import { parseModifierV4 } from '@toolwind/v4-modifier-parser';
+import { createModifierParser } from '@toolwind/v4-modifier-parser';
 
 // using empty values here so the compiler plays nice and generates the styles without values
 const EMPTY_VALUES = { values: { DEFAULT: '' } };
@@ -26,7 +26,11 @@ const sides: Record<string, Array<string>> = {
 const cornerShapeStaticKeywords: Array<string> = ['round', 'scoop', 'bevel', 'notch', 'square', 'squircle'];
 const cornerShapeFunctionalKeywords: Array<string> = ['superellipse'];
 
-export default plugin(({ addUtilities, matchUtilities }) => {
+export default plugin((api) => {
+  // create a Tailwind CSS version-agnostic modifier parser
+  const parseModifier = createModifierParser(api);
+
+  const { addUtilities, matchUtilities } = api;
   for (const [cornerShorthand, corners] of Object.entries(sides)) {
     const utilityPrefix = join('corner', cornerShorthand);
     for (const corner of corners) {
@@ -40,17 +44,17 @@ export default plugin(({ addUtilities, matchUtilities }) => {
       }
       // functional values (accepts percentage argument, e.g. corner-superellipse/50)
       for (const keyword of cornerShapeFunctionalKeywords) {
-        const allowlistedValues = ['e', 'infinity', 'pi'].flatMap((v) => [v, `-${v}`]);
         matchUtilities(
           {
-            [`${utilityPrefix}-${keyword}`]: (_, { modifier }) => {
-              modifier = modifier?.trim() ?? null;
-              if (!modifier) return {};
-              const { kind, value } = modifier?.startsWith('[')
-                ? parseModifierV4(modifier)
-                : { kind: 'named', value: modifier };
-              if (!value || (kind !== 'arbirtrary' && isNaN(Number(value)) && !allowlistedValues.includes(value))) {
-                return {};
+            [`${utilityPrefix}-${keyword}`]: (_: any, { modifier }: { modifier: string | null }) => {
+              if (!modifier) {
+                console.error(`Invalid modifier: ${modifier}`);
+                throw new Error(`Invalid modifier: ${modifier}`);
+              }
+              const value = parseModifier(modifier);
+              if (!value) {
+                console.error(`Invalid value: ${value}`);
+                throw new Error(`Invalid value: ${value}`);
               }
               return {
                 [join('corner', corner, 'shape')]: `${keyword}(${value})`,
