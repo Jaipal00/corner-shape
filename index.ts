@@ -56,6 +56,7 @@ export default plugin((api) => {
                 console.error(`Invalid value: ${value}`);
                 throw new Error(`Invalid value: ${value}`);
               }
+              throw new Error(`MADE IT THIS FAR! ${JSON.stringify({ modifier, value, keyword, corner }, null, 2)}`);
               return {
                 [join('corner', corner, 'shape')]: `${keyword}(${value})`,
               };
